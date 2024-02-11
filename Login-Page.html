@@ -36,17 +36,15 @@
       box-sizing: border-box;
       border-radius: 7px;
       outline: none;
-      /* border: none; */
       border: 1px solid gray;
     }
 
     form input:focus {
-      border: 1px solid #f1c400;
+      border: 1px solid #F1C400;
     }
 
     .passwords {
       height: 10%;
-      /* background-color: #b53636; */
       width: 25vw;
       display: flex;
       justify-content: space-between;
@@ -54,21 +52,19 @@
     }
 
     form button {
-      background-color: #f1c400;
+      background-color: #F1C400;
       color: #fff;
       width: 100%;
       padding: 12px;
-      /* padding: 15px 80px; */
       border: none;
       border-radius: 7px;
       cursor: pointer;
-      color: rgba(0, 0, 0, 0.907);
       font-size: 17px;
       margin-top: 20px;
     }
 
     form button:hover {
-      background-color: #f7ce15;
+      background-color: #F1C400;
     }
 
     .Login-modal {
@@ -103,21 +99,21 @@
     }
 
     #loginModalMessage {
-      color: #f1c400;
+      color: #F1C400;
     }
 
     p a {
-      color: #f7ce15;
+      color: #F1C400;
       text-decoration: none;
     }
 
     p a:hover {
-      color: #f7e38a;
+      color: #F1C400;
     }
 
     #showPasswordBtn {
       cursor: pointer;
-      color: #f1c400;
+      color: #F1C400;
       font-size: 14px;
       text-decoration: underline;
     }
@@ -130,17 +126,52 @@
 
     .forgetPasswordBtn:hover {
       text-decoration: underline;
-      color: #f1c400;
+      color: #F1C400;
+    }
+
+    @media screen and (max-width: 1440px) {
+      .Login-Form {
+        width: 90%;
+      }
+
+      .passwords {
+        width: 100%;
+        height: 20%;
+        display: flex;
+        gap: 30px;
+      }
+    }
+
+    @media screen and (max-width: 1080px) {
+      .Login-Form {
+        width: 70%;
+      }
+
+      .passwords {
+        width: 100%;
+      }
     }
 
     @media screen and (max-width: 768px) {
+      .Login-Form {
+        width: 65%;
+      }
+
       .passwords {
         height: 10%;
-        width: 35vw;
+        width: 100%;
         display: flex;
         justify-content: space-between;
-        /* background-color: rgb(161, 30, 52); */
-        /* gap: 20%; */
+      }
+    }
+
+    @media screen and (max-width: 720px) {
+      .Login-Form {
+        width: 65%;
+      }
+
+      .passwords {
+        width: 100%;
       }
     }
 
@@ -178,7 +209,7 @@
 
       <button type="submit">Login</button>
     </form>
-    <p>Don't have an account? <a href="Sign-Up.html">Sign up</a></p>
+    <p>Don't have an account? <a href="Sign-Up.html"> Sign up</a></p>
 
     <div id="loginMyModal" class="Login-modal">
       <div class="Login-modal-content">
@@ -189,6 +220,7 @@
     </div>
   </body>
   <script>
+
     const loginValidateForm = (event) => {
       event.preventDefault();
 
@@ -210,13 +242,6 @@
 
       console.log(isValidEmail(email));
 
-      const passwordValidation = isValidPassword(password);
-      if (!passwordValidation.isValid) {
-        displayModal(`Invalid Password. ${passwordValidation.message}`, true);
-        resetSignUpButton();
-        return;
-      }
-
       const formData = {
         email: email,
         password: password,
@@ -228,8 +253,8 @@
           console.log(response.data);
           displayModal("Login successful!");
 
-          const token = response.data.data;
-          localStorage.setItem("authToken", token);
+          const userID = response.data.data._id;
+          localStorage.setItem("userID", userID);
           resetLoginFormFields();
           window.location.href = "./Dashboard.html";
         })
@@ -255,30 +280,12 @@
     const resetSignUpButton = () => {
       const signUpButton = document.querySelector('button[type="submit"]');
       signUpButton.disabled = false;
-      signUpButton.textContent = "Sign Up";
+      signUpButton.textContent = "Login";
     };
 
     const isValidEmail = (email) => {
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       return emailRegex.test(email);
-    };
-
-    const isValidPassword = (password) => {
-      const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}$/;
-      const isPasswordValid = passwordRegex.test(password);
-
-      if (!isPasswordValid) {
-        return {
-          isValid: false,
-          message:
-            "Password requirements: At least one lowercase letter, one uppercase letter, one digit, minimum length of 6 characters",
-        };
-      }
-
-      return {
-        isValid: true,
-        message: "Password is valid",
-      };
     };
 
     const togglePasswordVisibility = () => {
@@ -310,5 +317,8 @@
     const ForgotPassword = () => {
       window.location.href = "./ForgotPass.html";
     };
+
+
+
   </script>
 </html>

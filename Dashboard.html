@@ -64,7 +64,7 @@
       }
 
       li:hover {
-        color: #F1C400;
+        color: #F7D636;
       }
 
       .DashboardEmail {
@@ -166,7 +166,7 @@
       .userAccountDetails-sect {
         width: 98%;
         height: 29%;
-        background-color: #F1C400;
+        background-color: #F7D636;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -176,7 +176,7 @@
       }
 
       .userAccountDetails-sect .Route {
-        color: rgb(11, 109, 200);
+        color: black;
         font-weight: bold;
       }
 
@@ -285,7 +285,7 @@
 
       .loading-spinner {
         border: 6px solid #f3f3f3;
-        border-top: 6px solid #F1C400;
+        border-top: 6px solid black;
         border-radius: 50%;
         width: 40px;
         height: 40px;
@@ -321,7 +321,7 @@
       }
 
       .logout-modal button {
-        background-color: #F1C400;
+        background-color: #F7D636;
         color: #fff;
         padding: 10px 20px;
         font-size: 16px;
@@ -331,7 +331,7 @@
       }
 
       .logout-modal button:hover {
-        background-color: #F1C400;
+        background-color: #F7D636;
       }
 
       .logout-modal {
@@ -360,7 +360,7 @@
       }
 
       .logout-modal button {
-        background-color: #F1C400;
+        background-color: #F7D636;
         color: #fff;
         padding: 10px 20px;
         font-size: 16px;
@@ -370,7 +370,7 @@
       }
 
       .logout-modal button:hover {
-        background-color: #F1C400;
+        background-color: #F7D636;
       }
 
       @keyframes fadeIn {
@@ -413,7 +413,7 @@
 .popup-message button {
   width: 14%;
   height: 9%;
-  background-color: #F1C400;
+  background-color: #F7D636;
   color: #fff;
   /* padding: 10px 20px; */
   font-size: 16px;
@@ -423,7 +423,7 @@
 }
 
 .popup-message button:hover {
-  background-color: #F1C400;
+  background-color: #F7D636;
 }
 
 
@@ -446,10 +446,26 @@
           height: 30%;
         }
 
+        header {
+          height: 10vh;
+        }
+
         .headerWrap {
           width: 90%;
+          height: 80%;
           display: flex;
-          /* justify-content: space-evenly; */
+        }
+
+        section {
+          height: 90vh;
+        }
+
+        .DashboardSectionInfo {
+          width: 95%;
+          height: 90%;
+          display: flex;
+          flex-direction: column;
+          justify-content: baseline;
         }
 
         .DashboardSectionInfo-headline {
@@ -462,21 +478,23 @@
           text-align: center;
         }
 
+
         .UserInfo {
           width: 100%;
+          height: 100%;
           display: flex;
           justify-content: center;
         }
 
         .UserAccountDetails {
-          height: 60%;
+          height: 50%;
           width: 95%;
           gap: 6px;
         }
 
         .userAccountDetails-sect {
           font-size: 22px;
-          height: 55%;
+          height: 45%;
         }
 
         nav {
@@ -526,6 +544,7 @@
       @media screen and (max-width: 320px) {
         nav {
           font-size: 18px;
+          gap: 70px;
         }
         
         .DashboardSectionInfo-headline h2 {
@@ -562,7 +581,7 @@
     <header>
       <div class="headerWrap">
         <div class="DashboardLogo">
-          <img src="../Image/equitybank_header_logo.svg" alt="">
+          <img src="./equitybank_header_logo.svg" alt="">
         </div>
 
         <nav class="show-nav">
@@ -577,12 +596,12 @@
           <div class="icon">
             <i class="fa-regular fa-envelope"></i>
           </div>
-          <span>equityonlinepay@gmail.com</span>
+          <span>help@equitysymbol.com</span>
         </div>
         <div class="IconImage">
           <div class="menuIcon" onclick="toggleNav()">
-          <img class="menu2a" src="../Image/menu 2a.png" alt="">
-          <img class="menu1a" src="../Image/close 1a.png" alt="">
+          <img class="menu2a" src="./menu 2a.png" alt="">
+          <img class="menu1a" src="./close 1a.png" alt="">
           </div>
         </div>
       </div>
@@ -591,7 +610,7 @@
     <section>
       <div class="DashboardSectionInfo">
         <div class="DashboardSectionInfo-headline">
-          <h2>Equity Personal Banking..</h2>
+          <h2>Equity Personal Banking...</h2>
         </div>
         <div class="UserInfo">
           <h3>Welcome </h3>

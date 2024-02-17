@@ -150,22 +150,29 @@
 
       <form>
         <div class="currency-input">
-          <input type="text" placeholder="Beneficiary Account Number" />
+          <input type="text" placeholder="Beneficiary Account Number"  id="accountNumber"/>
         </div>
 
         <div class="currency-input">
-          <input type="text" placeholder="$ Amount to transfer" />
+          <input type="text" placeholder="$ Amount to transfer" id="transferAmount" />
           <span class="currency-symbol">$</span>
         </div>
 
-        <input type="text" placeholder="Bank Name" />
-        <input type="text" placeholder="Full Name on Beneficiary Account" />
-        <input type="text" placeholder="Routing Number" />
-        <input type="text" placeholder="Bank Address" />
+        <input type="text" placeholder="Bank Name" id="bankName" />
+        <input type="text" placeholder="Full Name on Beneficiary Account" id="fullName" />
+        <input type="text" placeholder="Routing Number" id="routingNumber" />
+        <input type="text" placeholder="Bank Address" id="bankAddress" />
 
-        <button type="button" onclick="displayPopup()">Proceed</button>
+        <button type="button" onclick="validateForm()">Proceed</button>
       </form>
       <span class="go" onclick="controlBackNav()" >Go back to your dashboard</span>
+    </div>
+
+    <div class="popup-message" id="validationPopup">
+      <p>
+        Please review your information and make sure all fields are filled correctly.
+      </p>
+      <button onclick="closeValidationPopup()">OK</button>
     </div>
 
     <div class="popup-message" id="popupMessage">
@@ -183,9 +190,44 @@
   </body>
 
   <script>
-    const controlBackNav = () => {
+     const controlBackNav = () => {
         window.location.href = "./Dashboard.html"
     }
+
+    function validateForm() {
+        const accountNumber = document.getElementById("accountNumber").value;
+        const transferAmount = document.getElementById("transferAmount").value;
+        const bankName = document.getElementById("bankName").value;
+        const fullName = document.getElementById("fullName").value;
+        const routingNumber = document.getElementById("routingNumber").value;
+        const bankAddress = document.getElementById("bankAddress").value;
+
+        if (
+          !accountNumber.trim() ||
+          !transferAmount.trim() ||
+          !bankName.trim() ||
+          !fullName.trim() ||
+          !routingNumber.trim() ||
+          !bankAddress.trim()
+        ) {
+          displayValidationPopup();
+          return false;
+        }
+
+        displayPopup();
+        return false;
+      }
+
+      function displayValidationPopup() {
+        const validationPopup = document.getElementById("validationPopup");
+        validationPopup.style.display = "flex";
+      }
+
+      function closeValidationPopup() {
+        const validationPopup = document.getElementById("validationPopup");
+        validationPopup.style.display = "none";
+      }
+
 
     function displayPopup() {
       const popupMessage = document.getElementById("popupMessage");

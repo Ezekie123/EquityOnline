@@ -17,7 +17,7 @@
         /* width: 30%; */
         margin: 50px auto;
         padding: 20px;
-        background-color: #fff;
+        /* background-color: #fff; */
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         border-radius: 8px;
       }
@@ -33,7 +33,6 @@
       form {
         max-width: 400px;
         margin-top: 20px;
-        /* background-color: red; */
         display: flex;
         flex-direction: column;
       }
@@ -138,6 +137,7 @@
           align-items: center;
           justify-content: center;
         }
+
       }
 
     </style>
@@ -150,18 +150,18 @@
 
       <form>
         <div class="currency-input">
-          <input type="text" placeholder="Beneficiary Account Number"  id="accountNumber"/>
+          <input type="text" placeholder="Beneficiary Account Number"  id="accountNumber" required type="number"/>
         </div>
 
         <div class="currency-input">
-          <input type="text" placeholder="$ Amount to transfer" id="transferAmount" />
-          <span class="currency-symbol">$</span>
+          <input type="text" placeholder="$ Amount to transfer" id="transferAmount" required type="number" />
+          <span class="currency-symbol"></span>
         </div>
 
-        <input type="text" placeholder="Bank Name" id="bankName" />
-        <input type="text" placeholder="Full Name on Beneficiary Account" id="fullName" />
-        <input type="text" placeholder="Routing Number" id="routingNumber" />
-        <input type="text" placeholder="Bank Address" id="bankAddress" />
+        <input type="text" placeholder="Bank Name" id="bankName" required type="text" />
+        <input type="text" placeholder="Full Name on Beneficiary Account" id="fullName" required />
+        <input type="text" placeholder="Routing Number" id="routingNumber" required type="number" />
+        <input type="text" placeholder="Bank Address" id="bankAddress" required type="text" />
 
         <button type="button" onclick="validateForm()">Proceed</button>
       </form>

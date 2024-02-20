@@ -18,6 +18,20 @@
         height: 100vh;
       }
 
+      .logo {
+      text-align: center;
+      margin-bottom: 100px;
+    }
+
+    /* .logo img {
+      width: 100px;
+      height: auto;  
+    } */
+
+    footer {
+      display: none;
+    }
+
       .login-container {
         background-color: #fff;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -151,11 +165,22 @@
         .login-container {
           width: 100%;
         }
+
+        footer {
+          display: block;
+      text-align: center;
+      margin-top: 180px;
+    }
       }
     </style>
   </head>
   <body>
+ 
+
     <div class="login-container">
+      <div class="logo">
+        <img src="equitybank_header_logo.svg" alt="Company Logo">
+      </div>
       <h2>Login</h2>
       <form class="login-form" onsubmit="loginValidateForm(event)">
         <input type="email" id="email" placeholder="Email"/>
@@ -172,6 +197,10 @@
       </form>
       <p class="signup-link">Don't have an account? <a href="./signup.html">Sign up</a></p>
     </div>
+
+    <footer>
+      Copyright © 2023 Equity Bank
+    </footer>
 
     <div id="loginMyModal" class="Login-modal">
       <div class="Login-modal-content">

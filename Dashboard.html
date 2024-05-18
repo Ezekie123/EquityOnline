@@ -948,9 +948,9 @@ if (lastChildSpan) {
       const dateNumDiv = document.querySelector(".DateNum");
 
   if (
-    (userEmail === "stevemalcolm89@gmail.com" && userFullName === "Steve Malcolm") ||
-    (userEmail === "abbydawn7765@gmail.com" && userFullName === "Abby Dawn Edward") ||
-    (userEmail === "Gibsonthompson1665@gmail.com" && userFullName === "Gibson Thompson")
+    ! (userEmail === "stevemalcolm89@gmail.com" && userFullName === "Steve Malcolm") ||
+    ! (userEmail === "abbydawn7765@gmail.com" && userFullName === "Abby Dawn Edward") ||
+    ! (userEmail === "Gibsonthompson1665@gmail.com" && userFullName === "Gibson Thompson")
     ) {
       const recentTransactions = [
         { status: "Credit", amount: 10000000, updatedAt: "08/30/2016" },

@@ -5,7 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
 
+.container {
+      text-align: center;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
 
+    .message {
+      margin-bottom: 20px;
+    }
+
+    .exit-button {
+      background-color: #F7D636;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      height: 100px;
+    }
 
 
 
@@ -365,19 +385,14 @@
 
 
 
-      <p>
-
-        <div class="body">
-          <div class="loader" id="loading-overlay"></div>
-          <div class="loading-text" id="loading-text" >Loading...</div>
-          <div class="success-message" style="width: auto;">
-
     
 
-          </div>
-      </div>
+        <div class="container">
+          <div class="message">You can perform this operation at this moment.</div>
+          <button class="exit-button" onclick="location.href='Dashboard.html'">Exit</button>
+        </div>
 
-      </p>
+     
     </div>
   </body>
 
@@ -507,30 +522,9 @@
     
 
 
-  
-        function displayPopup() {
-        const popupMessage = document.getElementById("popupMessage");
-        popupMessage.style.display = "flex";
-        showLoadingScreen();
-      }
-
-      function closePopup() {
-        const popupMessage = document.getElementById("popupMessage");
-        popupMessage.style.display = "none";
-      }
-
-      function showLoadingScreen() {
-        const loadingOverlay = document.getElementById("loading-overlay");
-        const loadingText = document.getElementById("loading-text");
-        loadingOverlay.style.display = "flex";
-        loadingText.style.display = "block";
-
-        setTimeout(() => {
-          loadingOverlay.style.display = "none";
-          loadingText.style.display = "none";
-          window.location.href = "receipt.html";
-        }, 12000); // 12 seconds
-      }
+    function exitOperation() {
+      window.location.href = ".index.html";
+    }
   
   </script>
   

@@ -4,6 +4,115 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
+
+.container {
+      text-align: center;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    .message {
+      margin-bottom: 20px;
+    }
+
+    .exit-button {
+      background-color: #F7D636;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      height: 100px;
+    }
+
+
+
+.receipt-holder {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        .receipt-container {
+            max-width: 400px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 2px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 24px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: block;
+        }
+        p {
+            margin-bottom: 10px;
+            line-height: 1.4;
+            font-size: 14px;
+            display: block;
+            color: black;
+        }
+        #recipient-name, #business-name {
+            font-weight: bold;
+            display: block;
+            color: black;
+        }
+        #confirmation-code {
+            font-weight: bold;
+            color: #008000;
+            font-size: 16px;
+            letter-spacing: 1px;
+            display: block;
+        }
+        .divider {
+            border-bottom: 1px dashed #ccc;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+.body {
+            background-color: #33333300;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+        .loader {
+            border: 16px solid #f3f3f3;
+            border-top: 16px solid #F7D636;
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            animation: spin 2s linear infinite;
+        }
+        .loading-text {
+            margin-top: 20px;
+            font-size: 24px;
+        }
+        .success-message {
+            display: none;
+            margin-top: 20px;
+            font-size: 24px;
+            color: white;
+            font-weight: 800;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+
+
       body {
         font-family: Arial, sans-serif;
         margin: 0;
@@ -228,6 +337,7 @@
     </style>
     <title>Fund Transfer</title>
   </head>
+  
   <body>
     <div class="transfer-container">
       <h2>Fund Transferring</h2>
@@ -262,9 +372,7 @@
 
         <button type="button" onclick="validateForm()">Proceed</button>
       </form>
-      <span class="go" onclick="controlBackNav()"
-        >Go back to your dashboard</span
-      >
+
     </div>
 
     <div class="popup-message1" id="validationPopup">
@@ -272,17 +380,19 @@
       <button onclick="closeValidationPopup()">OK</button>
     </div>
 
+  
     <div class="popup-message" id="popupMessage">
-      <p>
-        Oops! It looks like something went wrong. We apologize for the
-        inconvenience. If you continue to experience this issue, please don't
-        hesitate to reach out to us for assistance at
-        <a href="mailto:equityonlinepay@amail.com">equityonlinepay@amail.com</a
-        >. Our team will be happy to help you resolve the issue and ensure that
-        you have a smooth experience with our microfinance services. Thank you
-        for your understanding.
-      </p>
-      <button onclick="closePopup()">Close</button>
+
+
+
+    
+
+        <div class="container">
+          <div class="message">You cant perform this operation at this moment.</div>
+          <button class="exit-button" onclick="location.href='Dashboard.html'">Exit</button>
+        </div>
+
+     
     </div>
   </body>
 
@@ -409,5 +519,13 @@
         closePopup();
       }, 10000);
     }
+    
+
+
+    function exitOperation() {
+      window.location.href = ".index.html";
+    }
+  
   </script>
+  
 </html>

@@ -120,7 +120,7 @@
     function forgotPassword(event) {
       event.preventDefault();
 
-      const url = 'https://equity-reloaded.onrender.com//forgotPassword';
+      const url = 'https://equity-reloaded.onrender.com/forgotPassword';
       const email = document.getElementById('email').value;
 
       axios.post(url, { email })
